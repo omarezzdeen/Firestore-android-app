@@ -7,8 +7,11 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
+        android:supportsRtl="false"
         android:theme="@style/Theme.FirestoreAndroidApp">
+        <activity
+            android:name=".screens.AddBookActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
