@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".screens.AddBookActivity"
-    tools:viewBindingIgnore="true"
-    tools:ignore="ExtraText">
+    tools:ignore="ExtraText"
+    tools:viewBindingIgnore="true">
 
     <com.example.firestoreandroidapp.utils.MSPTextBold
         android:id="@+id/MSPTextBold"
@@ -32,6 +32,8 @@
         android:inputType="text"
         android:padding="@dimen/et_padding"
         android:textColor="@color/colorPrimaryText"
+        android:hint="Book name"
+        android:background="@drawable/backwithborder"
         android:textSize="@dimen/et_textSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -49,8 +51,11 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
         android:inputType="text"
+        android:hint="Book author"
+        android:background="@drawable/backwithborder"
         android:padding="@dimen/et_padding"
         android:textColor="@color/colorPrimaryText"
+        android:textColorHint="@color/colorSecondaryText"
         android:textSize="@dimen/et_textSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -67,9 +72,12 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
-        android:inputType="text"
+        android:inputType="date"
         android:padding="@dimen/et_padding"
+        android:hint="Launch year"
+        android:background="@drawable/backwithborder"
         android:textColor="@color/colorPrimaryText"
+        android:textColorHint="@color/colorSecondaryText"
         android:textSize="@dimen/et_textSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -87,9 +95,12 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
+        android:background="@drawable/backwithborder"
         android:inputType="number"
+        android:hint="Price"
         android:padding="@dimen/et_padding"
         android:textColor="@color/colorPrimaryText"
+        android:textColorHint="@color/colorSecondaryText"
         android:textSize="@dimen/et_textSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -112,7 +123,7 @@
         android:gravity="center"
         android:paddingTop="@dimen/btn_padding"
         android:paddingBottom="@dimen/btn_padding"
-        android:text="@string/btn_lbl_login"
+        android:text="ADD BOOKS"
         android:textColor="@android:color/white"
         android:textSize="@dimen/btn_textSize"
         app:layout_constraintEnd_toEndOf="parent"
@@ -120,99 +131,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_price"
         tools:ignore="MissingConstraints" />
-
-
-    <!--    <com.example.firestoreandroidapp.utils.MSPTextView-->
-    <!--        android:id="@+id/tv_title"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginTop="35dp"-->
-    <!--        android:text="@string/title_login"-->
-    <!--        android:textColor="@color/colorPrimaryText"-->
-    <!--        android:textSize="@dimen/title_textSize"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        tools:ignore="MissingConstraints" />-->
-
-
-    <!--        <com.example.firestoreandroidapp.utils.MSPEditText-->
-    <!--            android:id="@+id/et_username"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:inputType="text"-->
-    <!--            android:padding="@dimen/et_padding"-->
-    <!--            android:textColor="@color/colorPrimaryText"-->
-    <!--            android:textSize="@dimen/et_textSize"-->
-    <!--            tools:text="username" />-->
-    <!--    </com.google.android.material.textfield.TextInputLayout>-->
-
-    <!--    <com.google.android.material.textfield.TextInputLayout-->
-    <!--        android:id="@+id/til_password"-->
-    <!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginStart="16dp"-->
-    <!--        android:layout_marginTop="20dp"-->
-    <!--        android:layout_marginEnd="16dp"-->
-    <!--        android:hint="@string/et_hint_password"-->
-    <!--        android:textColorHint="@color/colorSecondaryText"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/til_email">-->
-
-    <!--        <com.example.firestoreandroidapp.utils.MSPEditText-->
-    <!--            android:id="@+id/et_password"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:inputType="textPassword"-->
-    <!--            android:padding="@dimen/et_padding"-->
-    <!--            android:textColor="@color/colorPrimaryText"-->
-    <!--            android:textSize="@dimen/et_textSize"-->
-    <!--            tools:text="123456" />-->
-    <!--    </com.google.android.material.textfield.TextInputLayout>-->
-
-    <!--    <com.example.firestoreandroidapp.utils.MSPTextView-->
-    <!--        android:id="@+id/tv_forgot_password"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginEnd="16dp"-->
-    <!--        android:foreground="?attr/selectableItemBackground"-->
-    <!--        android:padding="@dimen/clickable_text_view_padding"-->
-    <!--        android:text="@string/lbl_forgot_password"-->
-    <!--        android:textColor="@color/colorSecondaryText"-->
-    <!--        android:textSize="@dimen/forgot_password_textSize"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/til_password" />-->
-
-    <!--    <LinearLayout-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginTop="25dp"-->
-    <!--        android:gravity="center_vertical"-->
-    <!--        android:orientation="horizontal"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/btn_login">-->
-
-    <!--        <com.example.firestoreandroidapp.utils.MSPTextView-->
-    <!--            android:id="@+id/tv_don_t_have_an_account"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:padding="@dimen/clickable_text_view_padding"-->
-    <!--            android:text="@string/don_t_have_an_account"-->
-    <!--            android:textColor="@color/colorSecondaryText"-->
-    <!--            android:textSize="@dimen/lbl_text_view_textSize" />-->
-
-    <!--        <com.example.firestoreandroidapp.utils.MSPTextView-->
-    <!--            android:id="@+id/tv_register"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:foreground="?attr/selectableItemBackground"-->
-    <!--            android:padding="@dimen/clickable_text_view_padding"-->
-    <!--            android:text="@string/register"-->
-    <!--            android:textColor="@color/colorSecondaryText"-->
-    <!--            android:textSize="@dimen/lbl_text_view_textSize" />-->
-    <!--    </LinearLayout>-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

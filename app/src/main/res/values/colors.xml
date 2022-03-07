@@ -11,8 +11,9 @@
     <color name="primary_color_blue">#4b7bec</color>
 
 
-    <color name="colorPrimary">#ED2173</color>
-    <color name="colorPrimaryDark">#222934</color>
+    <color name="colorPrimary">#f39c12</color>
+    <color name="colorSecondary">#f39c12</color>
+    <color name="colorPrimaryDark">#f1c40f</color>
     <color name="colorAccent">#ED2173</color>
 
     <color name="colorThemeBlue">#3867d6</color>
