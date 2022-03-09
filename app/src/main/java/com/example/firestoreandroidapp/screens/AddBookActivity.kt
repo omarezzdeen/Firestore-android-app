@@ -1,5 +1,6 @@
 package com.example.firestoreandroidapp.screens
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -26,7 +27,7 @@ class AddBookActivity : AppCompatActivity() {
             val bookPrice = findViewById<EditText>(R.id.et_price).text.toString()
 
             if (bookName.isNotEmpty() && bookAuthor.isNotEmpty() && bookLaunchYear.isNotEmpty() && bookPrice.isNotEmpty()) {
-                val book = Books(bookName, bookAuthor, bookLaunchYear, bookPrice.toString())
+                val book = Books(bookName, bookAuthor, bookLaunchYear, bookPrice.toDouble())
                 saveBooks(book)
             }else{
                 Toast.makeText(this,"Please fill in all fields", Toast.LENGTH_LONG).show()
@@ -38,7 +39,7 @@ class AddBookActivity : AppCompatActivity() {
     private fun saveBooks(books: Books) {
         bookCollectionRef.add(books).addOnCompleteListener {task->
             if (task.isSuccessful){
-                Toast.makeText(this,"successfully added user", Toast.LENGTH_LONG).show()
+                Toast.makeText(this,"successfully added Book", Toast.LENGTH_LONG).show()
             }else{
                 Toast.makeText(this,"error", Toast.LENGTH_LONG).show()
             }

@@ -99,6 +99,6 @@ class EditBookActivity : AppCompatActivity() {
         val bookLaunchYear = findViewById<EditText>(R.id.et_launch_year).text.toString()
         val bookPrice = findViewById<EditText>(R.id.et_price).text.toString()
 
-        return Books(bookName, bookAuthor, bookLaunchYear, bookPrice)
+        return Books(bookName, bookAuthor, bookLaunchYear, bookPrice.toDouble())
     }
 }
