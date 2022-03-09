@@ -1,8 +1,10 @@
 package com.example.firestoreandroidapp.screens
 
+import android.content.ContentValues
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -21,10 +23,16 @@ class EditBookActivity : AppCompatActivity() {
         val buttonDelete = findViewById<Button>(R.id.btn_delete_book)
 
 
+
         buttonEdit.setOnClickListener {
             val book = getOldBookData()
-            val newBookMap = getNewBookData()
-            updateBookData(book,newBookMap)
+//            val task = bookCollectionRef.get()
+//            for (document in task.result?.documents!!) {
+//                val id = document.id
+//                Log.d(ContentValues.TAG, "This is a book: ${id}")
+                val newBookMap = getNewBookData()
+                updateBookData(book,newBookMap)
+
         }
 
         buttonDelete.setOnClickListener {
@@ -94,11 +102,12 @@ class EditBookActivity : AppCompatActivity() {
     }
 
     private fun getOldBookData(): Books {
+        val bookID = bookCollectionRef.document().id
         val bookName = findViewById<EditText>(R.id.et_book_name).text.toString()
         val bookAuthor = findViewById<EditText>(R.id.et_book_author).text.toString()
         val bookLaunchYear = findViewById<EditText>(R.id.et_launch_year).text.toString()
         val bookPrice = findViewById<EditText>(R.id.et_price).text.toString()
 
-        return Books(bookName, bookAuthor, bookLaunchYear, bookPrice.toDouble())
+        return Books(bookID, bookName, bookAuthor, bookLaunchYear, bookPrice.toDouble())
     }
 }
