@@ -10,10 +10,13 @@
         android:supportsRtl="false"
         android:theme="@style/Theme.FirestoreAndroidApp">
         <activity
+            android:name=".screens.EditBookActivity"
+            android:exported="false" />
+        <activity
             android:name=".screens.AddBookActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

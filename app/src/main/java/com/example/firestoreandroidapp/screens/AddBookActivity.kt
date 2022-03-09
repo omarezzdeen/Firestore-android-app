@@ -26,7 +26,7 @@ class AddBookActivity : AppCompatActivity() {
             val bookPrice = findViewById<EditText>(R.id.et_price).text.toString()
 
             if (bookName.isNotEmpty() && bookAuthor.isNotEmpty() && bookLaunchYear.isNotEmpty() && bookPrice.isNotEmpty()) {
-                val book = Books(bookName, bookAuthor, bookLaunchYear, bookPrice.toDouble())
+                val book = Books(bookName, bookAuthor, bookLaunchYear, bookPrice.toString())
                 saveBooks(book)
             }else{
                 Toast.makeText(this,"Please fill in all fields", Toast.LENGTH_LONG).show()

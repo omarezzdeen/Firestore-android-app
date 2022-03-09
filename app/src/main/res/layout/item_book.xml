@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="128dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/_16dp"
+    app:cardElevation="@dimen/_8dp"
+    app:cardCornerRadius="@dimen/_8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+<!--        <ImageView-->
+<!--            android:id="@+id/img_user"-->
+<!--            android:layout_width="28dp"-->
+<!--            android:layout_height="28dp"-->
+<!--            android:elevation="4dp"-->
+<!--            android:src="@drawable/ic_baseline_add"-->
+<!--            android:visibility="visible" />-->
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="start"
+                android:layout_margin="@dimen/_16dp"
+                android:background="@drawable/circle"
+                android:gravity="center"
+                android:shadowColor="@android:color/white"
+                android:shadowRadius="10.0"
+                android:text="1"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btn_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center"
+                android:background="@drawable/my_button_bg"
+                android:text="EDIT"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/white" />
+
+        </FrameLayout>
+
+        <com.example.firestoreandroidapp.utils.MSPTextBold
+            android:id="@+id/txt_name_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Book name"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="93dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <com.example.firestoreandroidapp.utils.MSPTextView
+            android:id="@+id/txt_name_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Book name"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="18dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="93dp"
+            tools:layout_editor_absoluteY="52dp" />
+
+        <com.example.firestoreandroidapp.utils.MSPTextView
+            android:id="@+id/txt_launch_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1988"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="93dp"
+            tools:layout_editor_absoluteY="76dp" />
+
+        <com.example.firestoreandroidapp.utils.MSPTextView
+            android:id="@+id/txt_price_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$50.00"
+            android:textColor="@color/colorSnackBarError"
+            android:textSize="18dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="100dp" />
+
+<!--        <androidx.constraintlayout.widget.Group-->
+<!--            android:id="@+id/group2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content" />-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_weight="2"-->
+<!--            android:orientation="vertical"-->
+<!--            tools:layout_editor_absoluteX="0dp"-->
+<!--            tools:layout_editor_absoluteY="43dp">-->
+
+
+<!--        </LinearLayout>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
