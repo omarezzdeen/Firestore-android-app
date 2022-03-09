@@ -1,5 +1,6 @@
 package com.example.firestoreandroidapp.screens
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -7,6 +8,7 @@ import android.widget.EditText
 import android.widget.Toast
 import com.example.firestoreandroidapp.R
 import com.example.firestoreandroidapp.models.Books
+import com.example.firestoreandroidapp.ui.MainActivity
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -20,13 +22,14 @@ class AddBookActivity : AppCompatActivity() {
         val addButton = findViewById<Button>(R.id.btn_add_book)
 
         addButton.setOnClickListener {
+            val bookID = bookCollectionRef.document().id
             val bookName = findViewById<EditText>(R.id.et_book_name).text.toString()
             val bookAuthor = findViewById<EditText>(R.id.et_book_author).text.toString()
             val bookLaunchYear = findViewById<EditText>(R.id.et_launch_year).text.toString()
             val bookPrice = findViewById<EditText>(R.id.et_price).text.toString()
 
             if (bookName.isNotEmpty() && bookAuthor.isNotEmpty() && bookLaunchYear.isNotEmpty() && bookPrice.isNotEmpty()) {
-                val book = Books(bookName, bookAuthor, bookLaunchYear, bookPrice.toDouble())
+                val book = Books(bookID, bookName, bookAuthor, bookLaunchYear, bookPrice.toDouble())
                 saveBooks(book)
             }else{
                 Toast.makeText(this,"Please fill in all fields", Toast.LENGTH_LONG).show()
@@ -38,7 +41,8 @@ class AddBookActivity : AppCompatActivity() {
     private fun saveBooks(books: Books) {
         bookCollectionRef.add(books).addOnCompleteListener {task->
             if (task.isSuccessful){
-                Toast.makeText(this,"successfully added user", Toast.LENGTH_LONG).show()
+                Toast.makeText(this,"successfully added Book", Toast.LENGTH_LONG).show()
+                startActivity(Intent(this, MainActivity::class.java))
             }else{
                 Toast.makeText(this,"error", Toast.LENGTH_LONG).show()
             }

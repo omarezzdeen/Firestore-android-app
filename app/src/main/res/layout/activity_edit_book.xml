@@ -15,14 +15,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="48dp"
-        android:text="Add Book"
+        android:text="Edit Book"
         android:textColor="@color/black"
         android:textSize="@dimen/title_textSize"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.example.firestoreandroidapp.utils.MSPEditText
-        android:id="@+id/et_book_name"
+        android:id="@+id/et_book_name_edit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_24dp"
@@ -43,7 +43,7 @@
         tools:text="Book name" />
 
     <com.example.firestoreandroidapp.utils.MSPEditText
-        android:id="@+id/et_book_author"
+        android:id="@+id/et_book_author_edit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_24dp"
@@ -60,12 +60,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_book_name"
+        app:layout_constraintTop_toBottomOf="@+id/et_book_name_edit"
         tools:ignore="MissingConstraints"
         tools:text="Book author" />
 
     <com.example.firestoreandroidapp.utils.MSPEditText
-        android:id="@+id/et_launch_year"
+        android:id="@+id/et_launch_year_edit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_24dp"
@@ -82,13 +82,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_book_author"
+        app:layout_constraintTop_toBottomOf="@+id/et_book_author_edit"
         tools:ignore="MissingConstraints"
         tools:text="Launch year" />
 
 
     <com.example.firestoreandroidapp.utils.MSPEditText
-        android:id="@+id/et_price"
+        android:id="@+id/et_price_edit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_24dp"
@@ -105,12 +105,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_launch_year"
+        app:layout_constraintTop_toBottomOf="@+id/et_launch_year_edit"
         tools:ignore="MissingConstraints"
         tools:text="Price" />
 
     <com.example.firestoreandroidapp.utils.MSPButton
-        android:id="@+id/btn_add_book"
+        android:id="@+id/btn_edit_book"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -123,15 +123,37 @@
         android:gravity="center"
         android:paddingTop="@dimen/btn_padding"
         android:paddingBottom="@dimen/btn_padding"
-        android:text="ADD BOOKS"
+        android:text="EDIT BOOKS"
         android:textColor="@android:color/white"
         android:textSize="@dimen/btn_textSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_price"
+        app:layout_constraintTop_toBottomOf="@+id/et_price_edit"
         tools:ignore="MissingConstraints" />
 
+    <com.example.firestoreandroidapp.utils.MSPButton
+        android:id="@+id/btn_delete_book"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="@dimen/_24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="24dp"
+        android:background="@color/colorSnackBarError"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center"
+        android:paddingTop="@dimen/btn_padding"
+        android:paddingBottom="@dimen/btn_padding"
+        android:text="DELETE BOOKS"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/btn_textSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_price_edit"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
