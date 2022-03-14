@@ -1,19 +1,16 @@
 package com.example.firestoreandroidapp.ui
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.firestoreandroidapp.R
 import com.example.firestoreandroidapp.models.Books
 import com.example.firestoreandroidapp.screens.EditBookActivity
 import com.example.firestoreandroidapp.ui.viewHolders.BookViewHolder
-import com.google.android.gms.common.internal.Constants
 import java.util.*
 
 class BookAdapter(
@@ -33,13 +30,15 @@ class BookAdapter(
             textNameAuthor.text = currentBook.bookAuthor
             textLaunchYear.text = currentBook.launchYear
             textPriceBook.text = currentBook.price.toString()
+            buttonPushEdit.setOnClickListener {
+                buttonPushEdit.setOnClickListener {
+                    val intent = Intent(holder.itemView.context, EditBookActivity::class.java)
+//                intent.putExtra("id", currentBook.id)
+                    intent.putExtra("Book", currentBook)
+                    holder.itemView.context.startActivity(intent)
+                }
+            }
         }
-
-//        holder.buttonPushEdit.setOnClickListener {
-//            // Launch Product details screen.
-//            val intent = Intent(this, EditBookActivity::class.java)
-//            this.startActivity(intent)
-//        }
 
 
     }

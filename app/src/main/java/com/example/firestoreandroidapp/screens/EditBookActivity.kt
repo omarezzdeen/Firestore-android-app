@@ -19,6 +19,7 @@ class EditBookActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_book)
+
         val buttonEdit = findViewById<Button>(R.id.btn_edit_book)
         val buttonDelete = findViewById<Button>(R.id.btn_delete_book)
 
@@ -26,10 +27,6 @@ class EditBookActivity : AppCompatActivity() {
 
         buttonEdit.setOnClickListener {
             val book = getOldBookData()
-//            val task = bookCollectionRef.get()
-//            for (document in task.result?.documents!!) {
-//                val id = document.id
-//                Log.d(ContentValues.TAG, "This is a book: ${id}")
                 val newBookMap = getNewBookData()
                 updateBookData(book,newBookMap)
 
@@ -39,8 +36,23 @@ class EditBookActivity : AppCompatActivity() {
             val book = getOldBookData()
             deleteBook(book)
         }
+        setupBookData()
 
 
+    }
+
+    private fun setupBookData(){
+        val ed_BookName = findViewById<EditText>(R.id.et_book_name_edit)
+        val ed_BookAuthor = findViewById<EditText>(R.id.et_book_author_edit)
+        val ed_BookLaunchYear = findViewById<EditText>(R.id.et_launch_year_edit)
+        val ed_BookPrice = findViewById<EditText>(R.id.et_price_edit)
+
+        val book = intent.getParcelableExtra<Books>("Book")
+        ed_BookName.setText(book?.bookName)
+        ed_BookAuthor.setText(book?.bookAuthor)
+        ed_BookLaunchYear.setText(book?.launchYear)
+        ed_BookPrice.setText(book?.price.toString())
+        Log.d("id", "setupBookData: $book")
     }
 
     private fun getNewBookData(): Map<String, Any> {
@@ -76,10 +88,12 @@ class EditBookActivity : AppCompatActivity() {
                         }
                     }else{
                         Toast.makeText(this,"No matching documents",Toast.LENGTH_LONG).show()
+                        Log.d(ContentValues.TAG, "No matching documents")
                     }
                 }
             }.addOnFailureListener {
                 Toast.makeText(this,it.message,Toast.LENGTH_LONG).show()
+                Log.d(ContentValues.TAG, "This is a message Error${it.message}")
             }
     }
 

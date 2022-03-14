@@ -3,12 +3,14 @@ package com.example.firestoreandroidapp.ui
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.ContentValues.TAG
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.firestoreandroidapp.R
@@ -33,6 +35,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var bookArrayList: ArrayList<Books>
     private lateinit var myAdapter: BookAdapter
     private lateinit var db: FirebaseFirestore
+    private lateinit var context: Context
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
