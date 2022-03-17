@@ -116,7 +116,7 @@
         android:layout_gravity="center"
         android:layout_marginHorizontal="@dimen/_24dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="124dp"
         android:layout_marginEnd="24dp"
         android:background="@color/colorPrimary"
         android:foreground="?attr/selectableItemBackground"
@@ -127,10 +127,47 @@
         android:textColor="@android:color/white"
         android:textSize="@dimen/btn_textSize"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_price"
         tools:ignore="MissingConstraints" />
+
+    <com.example.firestoreandroidapp.utils.MSPEditText
+        android:id="@+id/et_save_image"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/backwithborder"
+        android:hint="Upload image"
+        android:inputType="none"
+        android:padding="@dimen/et_padding"
+        android:textColor="@color/colorPrimaryText"
+        android:textColorHint="@color/colorSecondaryText"
+        android:textSize="@dimen/et_textSize"
+        app:layout_constraintBottom_toTopOf="@+id/btn_add_book"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_price"
+        app:layout_constraintVertical_bias="0.375"
+        tools:ignore="MissingConstraints"
+        tools:text="Upload image" />
+
+    <Button
+        android:id="@+id/btn_upload_image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:padding="5dp"
+        android:background="@drawable/ic_baseline_save"
+        app:layout_constraintBottom_toBottomOf="@+id/et_save_image"
+        app:layout_constraintEnd_toEndOf="@+id/et_save_image"
+        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintStart_toStartOf="@+id/et_save_image"
+        app:layout_constraintTop_toTopOf="@+id/et_save_image"
+        app:layout_constraintVertical_bias="0.526" />
+
 
 
 
